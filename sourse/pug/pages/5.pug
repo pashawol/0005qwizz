@@ -1,0 +1,50 @@
+extends layout/main.pug
+block variables
+	- let  mainPage= null
+block title
+	- let  title= 5
+	title= title + ' экран'
+
+
+include ../blocks/s-content/_s-content.pug
+include ../blocks/s-contact/_s-contact.pug
+
+block pagecontent
+ 
+	//- +mob-mnu()
+	+header()
+		+top-line()
+		//- +top-nav()
+	+header-block("car-default",'',`28`, title + 1 +'.html',title - 1)
+		+e.main-title цена аренды за сутки: 
+		.row.row--sm
+			+e.col.col-md-3.col-6
+				+in-c("radio", 'Любая' )(class="type-of price-of")
+
+			+e.col.col-md-3.col-6
+				+in-c("radio", 'до 1000 ₽' )(class="type-of price-of")
+
+			+e.col.col-md-3.col-6
+				+in-c("radio", '1001-2000 ₽' )(class="type-of price-of")
+
+			+e.col.col-md-3.col-6
+				+in-c("radio", '2001-3000 ₽' )(class="type-of price-of")
+
+			+e.col.col-md-3.col-6
+				+in-c("radio", '3001-4000 ₽' )(class="type-of price-of")
+
+			+e.col.col-md-3.col-6
+				+in-c("radio", '4001-5000 ₽' )(class="type-of price-of")
+
+			+e.col.col-md-3.col-6
+				+in-c("radio", '5001-6000 ₽' )(class="type-of price-of")
+
+			+e.col.col-md-3.col-6
+				+in-c("radio", 'от 6000 ₽' )(class="type-of price-of")
+ 
+			//- +e.total Итого: 
+			//- 	span.text-brown 6 дней
+	//- +s-form()
+	//- +s-contact()
+	//- +footer()
+

@@ -32,15 +32,8 @@ mixin modal()
 	//- 			.h3 Скоро с Вами свяжутся
 	//- 			br 
 	.d-none
-		+form-wrap()(id="modal-call" class="  modal-win modal-form" )
-			.text-center
-				+e.title.h3.ttu Обратный звонок
-				p Заполните заявку и&nbsp;мы&nbsp;с&nbsp;Вами свяжемся в&nbsp;течении 15&nbsp;минут
-			+input("Ваше Имя")(required) 
-			+input("Ваш телефон","tel")(required)
-			//- +input("email","Ваше email")(required)
-			//- +text( "Комментарий")
-			+e.INPUT.btn(type="submit" value="Рассчитать") 
-			+polite()
-		// #modal-call
+		+b.modal-win(id="modal-thanks" class="   modal-form" )
+			+e.title спасибо за обращение!
+			+e.text Проверьте ваш телефон, на&nbsp;указанный вами номер мы&nbsp;отправили SMS.
+		// #modal-thanks
 	// modal

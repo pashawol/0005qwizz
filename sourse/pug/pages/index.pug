@@ -2,8 +2,8 @@ extends layout/main.pug
 block variables
 	- let  mainPage= null
 block title
-	- let  title= 'title'
-	title= title
+	- let  title= 1
+	title= title + 'экран'
 
 
 include ../blocks/s-content/_s-content.pug
@@ -11,12 +11,12 @@ include ../blocks/s-contact/_s-contact.pug
 
 block pagecontent
  
-	+mob-mnu()
+	//- +mob-mnu()
 	+header()
 		+top-line()
-		+top-nav()
-	+header-block()
-	+s-form()
-	+s-contact()
-	+footer()
+		//- +top-nav()
+	+header-block("car-default",'def','', (title + 1) + '.html')
+	//- +s-form()
+	//- +s-contact()
+	//- +footer()
 

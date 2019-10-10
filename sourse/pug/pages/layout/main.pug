@@ -5,12 +5,12 @@ include ../../blocks/mixin-wrap/mixin-wrap.pug
 include ../../blocks/form-wrap/form-wrap.pug
 
 include ../../blocks/header/_header.pug
-include ../../blocks/footer/_footer.pug 
+//- include ../../blocks/footer/_footer.pug 
 include ../../blocks/modal/_modal.pug
 include ../../blocks/top-line/_top-line.pug
-include ../../blocks/top-nav/_top-nav.pug 
+//- include ../../blocks/top-nav/_top-nav.pug 
 include ../../blocks/header-block/_header-block.pug
-include ../../blocks/s-form/_s-form.pug
+//- include ../../blocks/s-form/_s-form.pug
 
 doctype html
 html(lang="ru")
@@ -40,17 +40,16 @@ html(lang="ru")
 		
 		//- link(rel="stylesheet", href="libs/magnificPopup/magnific-popup.css")
 		//- link(rel="stylesheet", href="libs/swiper-4.2.0/swiper.min.css")
-		link(rel="stylesheet", href="libs/slick/slick.css")
+		link(rel="stylesheet", href="libs/gijgo-combined-1.9.11/css/gijgo.min.css")
 		//- link(rel="stylesheet", href="libs/Easy-Responsive-Tab-Accordion-Control-Plugin-For-jQuery/easy-responsive-tabs.css")
 		link(rel="stylesheet", href="libs/fancybox/jquery.fancybox.min.css")
 		//- link(rel="stylesheet", href="css/main.css")
 		link(rel="stylesheet", href="css/main.min.css")
 	block variables
 	body(class= mainPage)
-		+ie11()
-		.main-wrapper
-			block pagecontent
-				h3 content
+		+ie11() 
+		block pagecontent
+			h3 content
 		+modal()
 		//- link(rel="stylesheet", href="fonts/fontello/css/fontello.css")
 		script(src="js/lazy.js")
@@ -71,26 +70,28 @@ html(lang="ru")
 		//- script(src="libs/magnificPopup/jquery.magnific-popup.min.js")
 		script(src="libs/fancybox/jquery.fancybox.min.js")
 		// modal libs
-		// slider libs
-		script(src="libs/slick/slick.min.js")
-		//- script(src="libs/swiper-4.2.0/swiper.min.js")
-		// /slider libs
+ 
 		// for svg libs
 		script(src="libs/svg4everybody-master/svg4everybody.min.js")
 		// /for svg libs
-		//- cut text libs
-		//- script(src="libs/jquery.morelines.min.js") 
-		//- /cut text libs
-		script(src="libs/jquery.touchSwipe.min.js")
-		//- script(src="libs/Easy-Responsive-Tab-Accordion-Control-Plugin-For-jQuery/easy-responsive-tabs.js")
-		//- custom input range libs
-		//- script(src="libs/ion.rangeSlider-2.2.0/js/ion-rangeSlider/ion.rangeSlider.js")
-		//- /custom input range libs
-
+ 
 		//- mask for  input  libs 
 		script(src="libs/jquery.inputmask.bundle.min.js")
 		//- / mask for  input  libs
+		script(src="libs/gijgo-combined-1.9.11/js/gijgo.min.js")
+		script(src="libs/gijgo-combined-1.9.11/js/messages/messages.ru-ru.min.js")
 
 		//- script(src="js/scripts.min.js")
 
 		script(src="js/common.js")
+		<svg class="invisible">
+			<linearGradient id="success-gradient"  x1="0%" y1="0%"    x2="100%" y2="100%">
+			<stop offset="0%"   stop-color="#e69a40"/>
+			<stop offset="100%"  stop-color="#f7ce29"/>
+			</linearGradient>
+			<linearGradient id="primary-gradient" gradientUnits="userSpaceOnUse" x1="165.4035" y1="344.0104" x2="165.4035" y2="397.3238" gradientTransform="matrix(1 0 0 -1 0 504)">
+				<stop  offset="0" style="stop-color:#1B8ACA"/>
+				<stop  offset="0.4976" style="stop-color:#27A9E5"/>
+				<stop  offset="1" style="stop-color:#31C5FC"/>
+			</linearGradient>
+		</svg>

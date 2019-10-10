@@ -1,0 +1,32 @@
+extends layout/main.pug
+block variables
+	- let  mainPage= null
+block title
+	- let  title= 3
+	title= title + ' экран'
+
+
+include ../blocks/s-content/_s-content.pug
+include ../blocks/s-contact/_s-contact.pug
+
+block pagecontent
+ 
+	//- +mob-mnu()
+	+header()
+		+top-line()
+		//- +top-nav()
+	+header-block("car-default",'',`47`, title + 1 +'.html',title - 1)
+		+e.main-title какую коробку передач вы&nbsp;предпочитаете? 
+		.row.row--sm
+			.col-md-6
+				+in-c("radio", 'Автомат' )
+			
+			.col-md-6
+				+in-c("radio", 'Механика' )
+			
+			//- +e.total Итого: 
+			//- 	span.text-brown 6 дней
+	//- +s-form()
+	//- +s-contact()
+	//- +footer()
+

@@ -1,0 +1,65 @@
+extends layout/main.pug
+block variables
+	- let  mainPage= null
+block title
+	- let  title= 4
+	title= title + ' экран'
+
+
+include ../blocks/s-content/_s-content.pug
+include ../blocks/s-contact/_s-contact.pug
+
+block pagecontent
+ 
+	//- +mob-mnu()
+	+header()
+		+top-line()
+		//- +top-nav()
+	+header-block("car-default",'',`38`, title + 1 +'.html',title - 1)
+		+e.main-title выберите тип кузова: 
+		.row.row--sm
+			+e.col--20.col-6
+				+in-c("radio", 'Любой' )(class="type-of")
+			
+			+e.col--20.col-6
+				+in-c("radio", 'Кроссовер' )(class="type-of")
+					+icon("jeep")
+			
+			+e.col--20.col-6
+				+in-c("radio", 'Купе' )(class="type-of")
+					+icon("coupe-car")
+			+e.col--20.col-6
+				+in-c("radio", 'Минивен' )(class="type-of")
+					+icon("microbus")
+			+e.col--20.col-6
+				+in-c("radio", 'Пикап' )(class="type-of")
+					+icon("pick-up")
+			+e.col--20.col-6
+				+in-c("radio", 'Родстер' )(class="type-of")
+					+icon("cabrio-car")
+			
+			
+			+e.col--20.col-6
+				+in-c("radio", 'Седан' )(class="type-of")
+					+icon("sedan-car-model")
+			
+			+e.col--20.col-6
+				+in-c("radio", 'Универсал' )(class="type-of")
+					+icon("car-black-side-view-pointing-left")
+			
+			
+			+e.col--20.col-6
+				+in-c("radio", 'Фургон' )(class="type-of")
+					+icon("van-black-transport-side-view-pointing-to-left")
+			
+			
+			+e.col--20.col-6
+				+in-c("radio", 'Хэтчбек' )(class="type-of")
+					+icon("car-of-hatchback-model")
+			
+			//- +e.total Итого: 
+			//- 	span.text-brown 6 дней
+	//- +s-form()
+	//- +s-contact()
+	//- +footer()
+

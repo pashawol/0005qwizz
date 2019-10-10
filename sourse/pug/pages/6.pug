@@ -1,0 +1,34 @@
+extends layout/main.pug
+block variables
+	- let  mainPage= null
+block title
+	- let  title= 6
+	title= title + ' экран'
+
+
+include ../blocks/s-content/_s-content.pug
+include ../blocks/s-contact/_s-contact.pug
+
+block pagecontent
+ 
+	//- +mob-mnu()
+	+header()
+		+top-line()
+		//- +top-nav()
+	+header-block("car",'',`6`, title + 1 +'.html',title - 1)
+		+e.main-title вам идеально подойдут: 
+		+e.final-text
+			+e.SPAN.final-count 6 
+			| из&nbsp;99&nbsp;наших автомобилей
+		+e.strong Оставьте телефон и&nbsp;гарантированно получите:
+		+e.list
+			+e.list-item SMS с&nbsp;ссылкой на&nbsp;персональную подборку авто со&nbsp;скидкой до&nbsp;18%
+			+e.list-item Бесплатную доставку до&nbsp;метро при аренде нашего авто
+			+e.list-item Промокод на&nbsp;2&nbsp;суток бесплатной аренды
+			//- a.link-modal(href="#modal-thanks") saads
+			//- +e.total Итого: 
+			//- 	span.text-brown 6 дней
+	//- +s-form()
+	//- +s-contact()
+	//- +footer()
+

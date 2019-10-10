@@ -1,7 +1,71 @@
-mixin header-block()
+mixin header-block(i,def, count, link, countq)
 	// start header-block
 	+b.header-block#header-block
 		.container
-			h1 header-block
-			.row
+			+e.main-row.row
+				div(class=(def=="def" ? 'col-xxl-6 col-lg-7' : 'col-xl-6 col-lg-7'))
+					+e.left-block
+						if def
+							h1 
+								span.text-primary Подберите 
+								| 
+								|  свой   идеальный автомобиль для аренды
+							+e.text-sub Ответьте на&nbsp;5&nbsp;вопросов и&nbsp;получите:
+							+e.row-sm-wrap
+								+e.row-sm.row
+									mixin item()
+										+e.col.col-md-4
+											+e.item
+												block
+									+item()
+										+e.head
+											+icon("wallet")
+											span.d-none.d-md-inline
+												|  до
+												+e.SPAN.lg 18%
+										+e.text Персональную скидку до&nbsp;18%
+									
+									+item()
+										+e.head
+											+icon("chauffeur") 
+											span.d-none.d-md-inline
+												+e.SPAN.lg 0 ₽
+										+e.text Бесплатную доставку по&nbsp;Москве
+									
+									+item()
+										+e.head
+											+icon("coupon")
+											span.d-none.d-md-inline
+												+e.SPAN.lg 2 
+												|  сут.
+										+e.text Промокод на&nbsp;2&nbsp;суток бесплатной аренды
+						else
+							+form-wrap
+								+e.head
+									+e.head-title=` Вопрос ${countq} из 5`
+									+b.progress
+										+e.bar(style=`width:${countq * 100 / 5 }%`)=`${countq * 100 / 5 }%`
+								+e.body
+									block
+								+e.foot
+									if count!= `6`
+										+e.list
+											+e.list-item Ваша личная скидка 9%
+											+e.list-item Бесплатная доставка до&nbsp;метро
+											if count!= `99`
+												+e.list-item Промокод на&nbsp;2&nbsp;суток аренды
+										// чтобы выключить кнопку -повесишь  класс disabled
+										+e.btn.btn(href=link) Далее
+									else
+										+input("+7 (___)-___-__-__",'tel')(autofocus)
+										+e.btn.btn(type="submit") Получить
+				.col 
+					+e.right-block
+						+e.img-wrap
+							+pic(i)
+						if !count
+							a.btn--right.btn(href=link) Подобрать автомобиль
+						else
+							+e.right-text Подобрано: 
+								span.text-primary=` ${count} авто` 
 	// end header-block

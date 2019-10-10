@@ -1,0 +1,33 @@
+extends layout/main.pug
+block variables
+	- let  mainPage= null
+block title
+	- let  title= 2
+	title= title + 'экран'
+
+
+include ../blocks/s-content/_s-content.pug
+include ../blocks/s-contact/_s-contact.pug
+
+block pagecontent
+ 
+	//- +mob-mnu()
+	+header()
+		+top-line()
+		//- +top-nav()
+	+header-block("car-default",'',99, title + 1 +'.html',title - 1)
+		+e.main-title укажите даты аренды: 
+		
+		.row.date-picker-block-js
+			.col-md-6: +e.input-wrap: label.d-block.label-date-picker-js
+				span.h6 Дата получения:
+				input.form-control.datepicker.startDate(type="text" placeholder="__.__.____")
+			.col-md-6: +e.input-wrap: label.d-block.label-date-picker-js 
+				span.h6 Дата возврата:
+				input.form-control.datepicker.endDate(type="text" placeholder="__.__.____")
+		+e.total Итого: 
+			span.text-brown 6 дней
+	//- +s-form()
+	//- +s-contact()
+	//- +footer()
+

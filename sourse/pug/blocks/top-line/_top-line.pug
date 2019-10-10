@@ -2,5 +2,12 @@ mixin top-line()
 	// start .top-line
 	+b.top-line.block-with-lazy
 		.container
-			.row top-line
+			.row
+				.col
+					+e.logo(href="/") 
+						img.res-i(src="img/@2x/logo.png", alt="")
+				.col-auto
+					+e.tel(href="tel:88005551080") 
+						+icon("telephone")
+						| 8 800 555 10 80
 	// end .top-line
