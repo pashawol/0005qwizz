@@ -64,19 +64,39 @@
 									<div class="form-wrap__body">
 										<div class="form-wrap__main-title">укажите даты аренды: 
 										</div>
-										<div class="row date-picker-block-js">
-											<div class="col-md-6">
-												<div class="form-wrap__input-wrap">
-													<label class="d-block label-date-picker-js"><span class="h6">Дата получения:</span>
-														<input class="form-control datepicker startDate" type="text" placeholder="__.__.____">
-													</label>
+										<div class="d-none d-md-block">
+											<div class="row date-picker-block-js">
+												<div class="col-md-6">
+													<div class="form-wrap__input-wrap">
+														<label class="d-block label-date-picker-js"><span class="h6">Дата получения:</span>
+															<input class="form-control datepicker startDate" type="text" placeholder="__.__.____">
+														</label>
+													</div>
+												</div>
+												<div class="col-md-6">
+													<div class="form-wrap__input-wrap">
+														<label class="d-block label-date-picker-js"> <span class="h6">Дата возврата:</span>
+															<input class="form-control datepicker endDate" type="text" placeholder="__.__.____">
+														</label>
+													</div>
 												</div>
 											</div>
-											<div class="col-md-6">
-												<div class="form-wrap__input-wrap">
-													<label class="d-block label-date-picker-js"> <span class="h6">Дата возврата:</span>
-														<input class="form-control datepicker endDate" type="text" placeholder="__.__.____">
-													</label>
+										</div>
+										<div class="d-md-none">
+											<div class="row">
+												<div class="col-md-6">
+													<div class="form-wrap__input-wrap">
+														<label class="d-block label-date-picker-js"><span class="h6">Дата получения:</span>
+															<input class="form-control startDate" type="date" placeholder="__.__.____">
+														</label>
+													</div>
+												</div>
+												<div class="col-md-6">
+													<div class="form-wrap__input-wrap">
+														<label class="d-block label-date-picker-js"> <span class="h6">Дата возврата:</span>
+															<input class="form-control endDate" type="date" placeholder="__.__.____">
+														</label>
+													</div>
 												</div>
 											</div>
 										</div>

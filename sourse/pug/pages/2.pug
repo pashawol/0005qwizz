@@ -17,14 +17,23 @@ block pagecontent
 		//- +top-nav()
 	+header-block("car-default",'',99, title + 1 +'.html',title - 1)
 		+e.main-title укажите даты аренды: 
-		
-		.row.date-picker-block-js
-			.col-md-6: +e.input-wrap: label.d-block.label-date-picker-js
-				span.h6 Дата получения:
-				input.form-control.datepicker.startDate(type="text" placeholder="__.__.____")
-			.col-md-6: +e.input-wrap: label.d-block.label-date-picker-js 
-				span.h6 Дата возврата:
-				input.form-control.datepicker.endDate(type="text" placeholder="__.__.____")
+		.d-none.d-md-block
+			.row.date-picker-block-js
+				.col-md-6: +e.input-wrap: label.d-block.label-date-picker-js
+					span.h6 Дата получения:
+					input.form-control.datepicker.startDate(type="text" placeholder="__.__.____")
+				.col-md-6: +e.input-wrap: label.d-block.label-date-picker-js 
+					span.h6 Дата возврата:
+					input.form-control.datepicker.endDate(type="text" placeholder="__.__.____")
+		.d-md-none
+			.row
+				.col-md-6: +e.input-wrap: label.d-block.label-date-picker-js
+					span.h6 Дата получения:
+					input.form-control.startDate(type="date" placeholder="__.__.____")
+				.col-md-6: +e.input-wrap: label.d-block.label-date-picker-js 
+					span.h6 Дата возврата:
+					input.form-control.endDate(type="date" placeholder="__.__.____")
+				
 		+e.total Итого: 
 			span.text-brown 6 дней
 	//- +s-form()
